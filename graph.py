@@ -1,3 +1,5 @@
+import csv
+
 class UndirectedGraph:
 
     def __init__(self):
@@ -39,3 +41,18 @@ class DirectedGraph:
 
     def neighbors(self, vertex):
         return list(self.adjacency[vertex])
+
+
+def load_graph(path, directed=False):
+    graph = DirectedGraph() if directed else UndirectedGraph()
+
+    with open(path, newline="") as file:
+        reader = csv.reader(file)
+        next(reader)  # skip the header line
+
+        for row in reader:
+            if not row:  # ignore the empty lines
+                continue
+            source, target, weight = (value.strip() for value in row)
+            graph.add_edge(source, target, float(weight))
+    return graph
