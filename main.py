@@ -1,7 +1,7 @@
 from graph import UndirectedGraph
 from graph import DirectedGraph
 from graph import load_graph
-from algorithms import is_connected
+from algorithms import is_connected, has_cycle
 
 # Undirected graphs
 undirected = UndirectedGraph()
@@ -41,3 +41,9 @@ print("Connectivity -------------------------------------")
 for number in range(1, 7):
     print(f"Example {number}:")
     is_connected(load_graph(f"examples_MD/ejemplo_{number}.csv"))
+
+# Cycle tests
+print("Cycles -------------------------------------")
+for number in range(1, 7):
+    print(f"Example {number}:")
+    has_cycle(load_graph(f"examples_MD/ejemplo_{number}.csv"))
