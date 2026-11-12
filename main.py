@@ -1,7 +1,7 @@
 from graph import UndirectedGraph
 from graph import DirectedGraph
 from graph import load_graph
-from algorithms import is_connected, has_cycle, is_tree
+from algorithms import is_connected, has_cycle, is_tree, is_forest
 
 # Undirected graphs
 undirected = UndirectedGraph()
@@ -53,3 +53,9 @@ print("Trees -------------------------------------")
 for number in range(1, 7):
     print(f"Example {number}:")
     is_tree(load_graph(f"examples_MD/ejemplo_{number}.csv"))
+
+#Forest tests
+print("Forests -----------------------------------")
+for number in range(1, 7):
+    print(f"Example {number}:")
+    is_forest(load_graph(f"examples_MD/ejemplo_{number}.csv"))

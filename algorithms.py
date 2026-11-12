@@ -54,3 +54,8 @@ def is_tree(graph):
     result = _is_connected(graph) and not _has_cycle(graph)
     print(f"is_tree: {result}")
     return result
+
+def is_forest(graph): 
+    result = not _has_cycle(graph)
+    print(f"is_forest: {result}")
+    return result
