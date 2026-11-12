@@ -21,7 +21,6 @@ class UndirectedGraph:
     def neighbors(self, vertex):
         return list(self.adjacency[vertex])
 
-
 class DirectedGraph:
 
     def __init__(self):
@@ -41,7 +40,6 @@ class DirectedGraph:
 
     def neighbors(self, vertex):
         return list(self.adjacency[vertex])
-
 
 def load_graph(path, directed=False):
     graph = DirectedGraph() if directed else UndirectedGraph()
